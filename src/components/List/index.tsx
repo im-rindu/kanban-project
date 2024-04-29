@@ -7,7 +7,7 @@ function List({ title, taskList, listColor }: ListProps) {
   localStorage.setItem(title, JSON.stringify(count));
 
   let taskListReturn;
-  if (count == 0) {
+  if (localStorage.getItem(title) == "0") {
     taskListReturn = (
       <div>
         <div className="bg-white width-full rounded-xl p-4 my-4 border border-solid border-[#DDDDDD] drop-shadow">
@@ -23,7 +23,7 @@ function List({ title, taskList, listColor }: ListProps) {
       <div
         key={item.title}
         id={item.title}
-        onDragStart={(e) => onDragStart(e, title, setCount)}
+        onDragStart={(e) => onDragStart(e)}
         draggable
       >
         <Card

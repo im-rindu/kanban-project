@@ -1,13 +1,13 @@
 export const onDragStart = (
-  event: React.DragEvent<HTMLDivElement>,
-  oldList: string,
-  setCount: React.Dispatch<React.SetStateAction<number>>
+  event: React.DragEvent<HTMLDivElement>
+  // oldList: string,
+  // setCount: React.Dispatch<React.SetStateAction<number>>
 ) => {
   event.dataTransfer.setData("text", event.currentTarget.id);
-  const countString = localStorage.getItem(oldList);
-  const count = countString ? parseInt(countString, 10) - 1 : 1;
-  localStorage.setItem(oldList, count.toString());
-  setCount(2);
+  // const countString = localStorage.getItem(oldList);
+  // const count = countString ? parseInt(countString, 10) - 1 : 1;
+  // localStorage.setItem(oldList, count.toString());
+  // setCount(count);
 };
 
 export const onDrop = (
