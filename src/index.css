@@ -1,0 +1,32 @@
+@font-face {
+  font-family: "SF-400";
+  src: url("./font/SF-Pro-Text-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SF-500";
+  src: url("./font/SF-Pro-Text-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SF-600";
+  src: url("./font/SF-Pro-Text-Semibold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SF-700";
+  src: url("./font/SF-Pro-Text-Bold.otf") format("opentype");
+}
+
+:root {
+  font-family: SF-400, serif;
+  line-height: 1.5;
+
+  color: #5a5a65;
+  background-color: #fff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
