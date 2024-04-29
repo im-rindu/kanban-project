@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: "SF-400";
   src: url("./font/SF-Pro-Text-Regular.otf") format("opentype");
@@ -19,10 +23,7 @@
 }
 
 :root {
-  font-family: SF-400, serif;
-  line-height: 1.5;
-
-  color: #5a5a65;
+  padding: 40px;
   background-color: #fff;
 
   font-synthesis: none;
