@@ -22,6 +22,12 @@
   src: url("./font/SF-Pro-Text-Bold.otf") format("opentype");
 }
 
+html,
+body,
+#root {
+  overflow: hidden;
+}
+
 :root {
   padding: 40px;
   background-color: #fff;

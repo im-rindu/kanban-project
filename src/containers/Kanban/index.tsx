@@ -2,7 +2,7 @@ import { Board, Text } from "components";
 
 function Kanban({ title, desc, listData, setData, data }: KanbanProps) {
   return (
-    <main className="w-full h-full">
+    <main className="max-w-screen h-screen">
       <Text type="title" text={title} />
       <Text type="normal" text={desc} />
       <br />

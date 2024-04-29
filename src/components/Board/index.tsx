@@ -2,7 +2,7 @@ import { List } from "components";
 
 function Board({ listData }: BoardProps) {
   return (
-    <section className="min-w-full h-full bg-lighter-grey rounded-lg flex">
+    <section className="min-w-screen h-4/6 bg-lighter-grey rounded-lg flex overflow-auto">
       {listData.map((item) => (
         <List
           key={item.title}
