@@ -2,7 +2,6 @@ import { Label } from "components";
 import React from "react";
 
 function Checkbox({ text, checked }: TextProps) {
-  // create state
   const [isChecked, setIsChecked] = React.useState(checked);
 
   return (

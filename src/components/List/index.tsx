@@ -1,13 +1,17 @@
 import { Card, Label } from "components";
 import { onDragStart, onDrop, onDragOver } from "./move";
+import React from "react";
 
 function List({ title, taskList, listColor }: ListProps) {
+  const [count, setCount] = React.useState(taskList.length);
+  localStorage.setItem(title, JSON.stringify(count));
+
   let taskListReturn;
-  if (!taskList.length) {
+  if (count == 0) {
     taskListReturn = (
       <div>
         <div className="bg-white width-full rounded-xl p-4 my-4 border border-solid border-[#DDDDDD] drop-shadow">
-          <Label type="sub-title" text="Nothing to be done 🙃" />
+          <Label type="sub-title" text="Nothing to be here 🙃" />
         </div>
         <div className="bg-white width-full rounded-xl p-4 my-4 border border-solid border-[#DDDDDD] drop-shadow">
           <img src="/this is fine.png" />
@@ -16,7 +20,12 @@ function List({ title, taskList, listColor }: ListProps) {
     );
   } else {
     taskListReturn = taskList.map((item) => (
-      <div key={item.title} id={item.title} onDragStart={onDragStart} draggable>
+      <div
+        key={item.title}
+        id={item.title}
+        onDragStart={(e) => onDragStart(e, title, setCount)}
+        draggable
+      >
         <Card
           key={item.title}
           title={item.title}
@@ -34,7 +43,9 @@ function List({ title, taskList, listColor }: ListProps) {
       className="h-inherit min-w-80 p-3 m-2"
       id={title}
       onDragOver={onDragOver}
-      onDrop={onDrop}
+      onDrop={(e) => {
+        onDrop(e, title, setCount);
+      }}
     >
       <Label type="sub-title" text={title} color={listColor} />
       {taskListReturn}
